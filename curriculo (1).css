@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    font-family: sans-serif;
+    text-decoration: none;
+  }
+  
+  .header {
+    background: rgba(14, 14, 14, 0.062);
+    padding-inline: 16px;
+  }
+  
+  .nav {
+    max-width: 1280px;
+    height: 70px;
+    margin-inline: auto;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgb(255, 132, 208); /* 2px de espessura, cor rosa */
+  }
+  
+  .logo {
+    font-size: 48px;
+  }
+  
+  .nav-list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  
+  .nav-list a {
+  font-size: 18px;
+  color: #fff;
+  padding-block: 16px;
+  justify-content:center;
+  transition: color 0.3s ease; /* Adiciona uma transição suave para a propriedade color */
+}
+
+.nav-list a:hover {
+  color: rgb(255, 132, 208); /* Altera a cor para rosa ao passar o mouse */
+}
+  .hero {
+    height: calc(100vh - 70px);
+    background: center / cover no-repeat url("./bg.jpg");
+  }
+  
+  .hamburger {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+  }
+  
+  .hamburger::after,
+  .hamburger::before {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+  }
+  /* Estilos para o título "Meu Currículo" */
+#curriculo h2 {
+  text-align: center; /* Centraliza o texto horizontalmente */
+  font-size: 2.5em; /* Ajuste o tamanho da fonte conforme necessário */
+  margin-bottom: 20px; /* Adiciona um espaço abaixo do título */
+  animation: corMudando 5s infinite alternate; /* Aplica a animação */
+}
+
+/* Definição da animação "corMudando" */
+@keyframes corMudando {
+  0% {
+    color: rgb(255, 132, 208); /* Rosa inicial */
+  }
+  20%{
+    color: rgb(252, 250, 251);
+  }
+  50% {
+    color: #ff4aae; /* Azul */
+  }
+  100% {
+    color: #fdfdfd; /* Verde */
+  }
+}
+  
+  @media (max-width: 750px) {
+    .hamburger {
+      display: block;
+      z-index: 1;
+    }
+  
+    .nav-list {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgb(255, 132, 208);
+      clip-path: circle(100px at 90% -15%);
+      transition: 1s ease-out;
+  
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      gap: 0;
+  
+      pointer-events: none;
+    }
+  
+    .nav-list a {
+      font-size: 24px;
+      opacity: 0;
+    }
+  
+    .nav-list li:nth-child(1) a {
+      transition: 0.5s 0.2s;
+    }
+  
+    .nav-list li:nth-child(2) a {
+      transition: 0.5s 0.4s;
+    }
+  
+    .nav-list li:nth-child(3) a {
+      transition: 0.5s 0.6s;
+    }
+  
+    /* Estilos ativos */
+  
+    .nav.active .nav-list {
+      clip-path: circle(1500px at 90% -15%);
+      pointer-events: all;
+    }
+  
+    .nav.active .nav-list a {
+      opacity: 1;
+    }
+  
+    .nav.active .hamburger {
+      position: fixed;
+      top: 26px;
+      right: 16px;
+      border-top-color: transparent;
+    }
+  
+    .nav.active .hamburger::before {
+      transform: rotate(135deg);
+    }
+  
+    .nav.active .hamburger::after {
+      transform: rotate(-135deg);
+      top: -7px;
+    }
+  }
+#curriculo {
+  /* ... outros estilos ... */
+  margin-bottom: 0; /* Remove a margem inferior */
+  padding-bottom: 0; /* Remove o padding inferior (se houver) */
+}
+
+/* Estilos para a seção de contato */
+#contato {
+  /* ... outros estilos ... */
+  margin-top: 0; /* Remove a margem superior */
+  padding-top: 0; /* Remove o padding superior (se houver) */
+}
+  /* Estilos para o iframe do currículo */
+#curriculo iframe {
+  width: 70%;
+  height: 3000px; /* Ajuste a altura conforme necessário */
+  border: none;
+  margin: 20px auto; /* Adiciona um pouco de margem vertical também */
+  display: block;
+}
+
+/* Estilos para o object do currículo (se estiver usando object) */
+#curriculo object {
+  width: 80%;
+  height: 800px; /* Ajuste a altura conforme necessário */
+  margin: 20px auto; /* Adiciona um pouco de margem vertical também */
+  display: block;
+}
+
+.botao-baixar {
+
+  padding: 12px 24px;
+  font-size: 20px;
+  display: block; /* Transforma em elemento de bloco */
+  width: fit-content; /* Ocupa apenas a largura necessária */
+  margin: 20px auto; /* Centraliza horizontalmente e adiciona margem vertical */ 
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(255, 110, 199); /* Cor rosa inicial */
+  border: 2px solid rgb(255, 112, 200);
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.botao-baixar i {
+  margin-right: 8px; /* Espaço entre o ícone e o texto */
+}
+
+.botao-baixar:hover {
+  background-color: #fff;
+  color: rgb(255, 132, 208);
+  box-shadow: 0 0 10px rgb(255, 132, 208), 0 0 20px rgb(255, 132, 208); /* Efeito de brilho */
+}
