@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let corIndexNome = 0;
     const palavrasRotativasContainer = document.getElementById('palavras-rotativas-container');
     const palavraRotativaElemento = document.getElementById('palavra-rotativa');
-    const palavrasRotativas = ["ILUSTRADORA", "PROTÓTIPOS", "DESIGNER"];
+    const palavrasRotativas = ["COMUNICAÇÃO ASSERTIVA", "PROATIVIDADE", "TRABALHO EM EQUIPE","RESOLUÇÃO DE PROBLEMAS"];
     let palavraRotativaIndex = 0;
     const tempoTrocaPalavra = 2000;
     const tempoTransicao = 500; // Duração da transição em milissegundos

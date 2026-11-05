@@ -123,14 +123,15 @@ body {
 }
 
 #apresentacao h1.nome-principal {
-    font-size: 2em; /* Tamanho base da fonte */
+    font-size: 4rem !important; /* Força o tamanho grande */
     font-family: "Abril Fatface", serif;
     font-weight: normal;
     margin-bottom: 10px;
     text-align: left;
     color: #FF69B4;
-    word-break: break-word; /* Evita quebras de linha em palavras longas */
+    word-break: break-word;
 }
+
 
 #apresentacao h2.profissao {
     font-size: 2em; /* Tamanho base da fonte */
@@ -154,8 +155,8 @@ body {
 #palavras-rotativas-container {
     margin-top: 15px;
     text-align: left;
-    font-size: 2em; /* Tamanho base da fonte */
-    color: #ff1493;
+    font-size: 10px; /* Tamanho base da fonte */
+    color: #FF69B4;
     position: relative;
     display: inline-block;
 }
@@ -163,7 +164,7 @@ body {
 #palavra-rotativa::before {
     content: "+ ";
     color: #ff9dcb;
-    margin-right: 5px;
+    margin-right: 2px;
 }
 
 .linha-transicao {
@@ -233,7 +234,7 @@ body {
     }
 
     #palavras-rotativas-container {
-        font-size: 2em;
+        font-size: 1em;
     }
 }
 
@@ -257,7 +258,7 @@ body {
     }
 
     #palavras-rotativas-container {
-        font-size: 2em; /* Aumenta a fonte em telas grandes */
+        font-size: 1em; /* Aumenta a fonte em telas grandes */
         text-align: left;
     }
 
@@ -998,9 +999,33 @@ h1, h2, h3 {
     border-radius: 5px;
     border: 1px solid #eee;
 }
+/* Botão Voltar ao Topo (Apenas a seta) */
+/* Animação da seta subindo e descendo */
+@keyframes pular {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px); /* Distância que a seta sobe */
+    }
+}
 
+/* Estilo da seta */
+.btn-topo {
+    display: inline-block;
+    text-align: center;
+    color: #f5f5f5; /* Cor rosa do seu site */
+    font-size: 42px; /* Tamanho da seta */
+    font-weight: 300; /* <--- Deixa o traço mais fino e elegante */
+    text-decoration: none;
+    animation: pular 1.5s infinite ease-in-out; /* Faz a animação rodar infinitamente */
+    transition: color 0.3s ease;
+}
 
-
+/* Efeito ao passar o mouse por cima */
+.btn-topo:hover {
+    color: #f07adc;
+}
 
 
 footer {
